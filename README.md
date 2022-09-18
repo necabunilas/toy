@@ -12,6 +12,9 @@ however further valid movement commands must still be allowed.
 - RIGHT
 - REPORT
 
+### Coding Environment
+- VSCode
+
 ### C++ Version
 C++ 13.1.6
 
