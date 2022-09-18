@@ -13,7 +13,7 @@ however further valid movement commands must still be allowed.
 - REPORT
 
 ### Coding Environment
-- VSCode
+VSCode
 
 ### C++ Version
 C++ 13.1.6
