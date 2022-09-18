@@ -36,6 +36,14 @@ int main()
    assert(toy.getPlaced() == false);
    cout << "Invalid direction input test pass\n";
 
+   toy.place("testr 2,2,east");
+   assert(toy.getPlaced() == false);
+   cout << "Invalid place command input test pass\n";
+
+   toy.place("PLACE 2,2,EAST");
+   assert(toy.getPlaced() == true);
+   cout << "Capital letters input test pass\n";
+
    toy.place("place 0,0,west");
    toy.move();
    assert(toy.getX() == 0);

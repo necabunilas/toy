@@ -4,6 +4,8 @@
 #define WEST 3
 #define SUCCESS true
 #define FAIL false
+#define MIN 0
+#define MAX 5
 
 using namespace std;
 
@@ -80,10 +82,16 @@ public:
 
     int place(string place)
     {
+        string first = place.substr(0, 5);
         string sub = place.substr(6, place.length() - 6);
         string face = sub.substr(4, sub.length() - 4);
         int tempX = (int)sub[0] - 48;
         int tempY = (int)sub[2] - 48;
+
+        if (!(first == "PLACE" || first == "place"))
+        {
+            return FAIL;
+        }
 
         if (!boundsChecker(tempX, tempY))
         {
@@ -172,19 +180,19 @@ public:
         if (!placed)
             return FAIL;
 
-        if (f == NORTH && y < 5)
+        if (f == NORTH && y < MAX)
         {
             y += 1;
         }
-        else if (f == WEST && x > 0)
+        else if (f == WEST && x > MIN)
         {
             x -= 1;
         }
-        else if (f == SOUTH && y > 0)
+        else if (f == SOUTH && y > MIN)
         {
             y -= 1;
         }
-        else if (f == EAST && x < 5)
+        else if (f == EAST && x < MAX)
         {
             x += 1;
         }
